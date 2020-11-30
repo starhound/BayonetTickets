@@ -1,6 +1,6 @@
-# BayonetTickets
+# BayonetTickets - Client
 
-Bayonet Tickets is a small, open sourced IT support ticketing application which has been integrated to be centralized around a [Rocket.Chat](https://rocket.chat) server. 
+Bayonet Tickets (BT-C) is a small, open sourced IT support ticketing application which has been integrated to be centralized around a [Rocket.Chat](https://rocket.chat) server. 
 
 Users submit tickets through the application, and after setting up bot account for your RC server, it posts to a ticketing group defined.
 
