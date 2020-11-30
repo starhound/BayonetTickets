@@ -10,4 +10,4 @@ You will need to supply a Rocket.Chat [bot account information](https://github.c
 
 You can find more information about the Imgur API and how to register your application from [here](https://api.imgur.com/).
 
-[!Image of Application](https://i.imgur.com/CqBlK6I.png)
+[Image of Application](https://i.imgur.com/CqBlK6I.png)
