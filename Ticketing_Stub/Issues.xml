@@ -1,0 +1,39 @@
+﻿<issues>
+  <Printer>
+    <item>Printer is out of toner</item>
+    <item>Printer is not printing</item>
+    <item>Need a printer added to this computer</item>
+    <item>Printer is giving an error code</item>
+    <item>Printer is showing offline</item>
+    <item>Printer is showing out of paper</item>
+  </Printer>
+  <Outlook>
+    <item>Email is in outbox</item>
+    <item>Email will not sync</item>
+    <item>Email wont open</item>
+  </Outlook>
+  <SAP>
+    <item>SAP is crashing</item>
+    <item>SAP wont printer</item>
+    <item>SAP is locked</item>
+    <item>Forgot my SAP login</item>
+    <item>SAP Add-ons crashing</item>
+    <irwm>SAP giving an error</irwm>
+  </SAP>
+  <Phone>
+    <item>Phone not ringing</item>
+    <item>Phone shows wrong extension</item>
+    <item>Phone showing registration error</item>
+    <item>Cant hear anything on headset</item>
+  </Phone>
+  <Equipment>
+    <item>Keyboard not working properly</item>
+    <item>Mouse not working properly</item>
+    <item>Monitor not working properly</item>
+    <item>Screen resolution is incorrect</item>
+  </Equipment>
+  <Setup>
+    <item>Need office configured for new user</item>
+    <item>Need a user login created</item>
+  </Setup>
+</issues>
