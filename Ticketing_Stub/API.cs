@@ -86,7 +86,7 @@ namespace Ticketing_Stub
                     {
                         user_tickets.Add(message);
                     }
-                }        
+                }
             }
             return user_tickets;
         }

@@ -37,7 +37,7 @@ namespace Ticketing_Stub
             doc.Load(path);
             XmlElement root = doc.DocumentElement;
             XmlNodeList node = root.GetElementsByTagName(type);
-            return node[0]; 
+            return node[0];
         }
 
         public static IList<ComboItem> Blank()
@@ -55,7 +55,7 @@ namespace Ticketing_Stub
                 ComboItem item = new ComboItem(count, node.Name);
                 count++;
                 items.Add(item);
-            }    
+            }
             return items;
         }
 
@@ -66,8 +66,8 @@ namespace Ticketing_Stub
             if (type.Equals(null) || type.Equals(" "))
                 return items;
 
-            int count = 1;       
-            foreach(XmlElement element in GetSpecificIssueNode(type))
+            int count = 1;
+            foreach (XmlElement element in GetSpecificIssueNode(type))
             {
                 items.Add(new ComboItem(count, element.InnerText));
                 count++;

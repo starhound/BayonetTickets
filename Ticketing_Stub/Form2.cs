@@ -38,7 +38,7 @@ namespace Ticketing_Stub
             {
                 string time = ticket["ts"].ToString();
                 string selected = currentTicketsListBox.GetItemText(currentTicketsListBox.SelectedItem);
-                if(time == selected)
+                if (time == selected)
                 {
                     string msg = ticket["msg"].ToString();
                     ticketOutputTextBox.Text = msg.Replace("\n", Environment.NewLine);

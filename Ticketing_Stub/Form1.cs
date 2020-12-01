@@ -1,16 +1,14 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Imgur.API;
+using Imgur.API.Authentication.Impl;
+using Imgur.API.Endpoints.Impl;
+using Imgur.API.Models;
+using System;
+using System.DirectoryServices.AccountManagement;
 using System.IO;
 using System.Net;
-using System.DirectoryServices.AccountManagement;
 using System.Net.Sockets;
-using Imgur.API.Authentication.Impl;
-using Imgur.API.Models;
-using Imgur.API.Endpoints.Impl;
-using Imgur.API;
-using System.Collections.Generic;
-using System.Configuration;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 /*
  * Written and developed by Wesley Reid - March 2020 for Bayonet Plumbing, Heating and AC inc.
@@ -36,7 +34,7 @@ namespace Ticketing_Stub
     {
         const string IMGUR_CLIENT_ID = "YOUR_IMGUR_CLIENT_ID";
         const string IMGUR_CLIENT_SECRET = "YOUR_IMGUR_CLIENT_SECRET";
-      
+
         //global hack to get image url outside of a Task function
         public string IMAGE_URL { get; private set; }
 
@@ -140,7 +138,7 @@ namespace Ticketing_Stub
                 bool ComboBoxesCheck = DetermineComboBoxes();
                 if (!ComboBoxesCheck)
                     return;
-                
+
                 string issue = "\n";
 
                 if (general.Length > 0)
@@ -149,7 +147,7 @@ namespace Ticketing_Stub
                 if (specific.Length > 0)
                     issue += "(Specific Issue) " + specific + "\n";
 
-                if(issueTextBox.Text.Length > 0)
+                if (issueTextBox.Text.Length > 0)
                     issue += issueTextBox.Text;
 
                 //grab some user info (AD email, user name, host name, ip addr)
@@ -160,9 +158,9 @@ namespace Ticketing_Stub
 
                 //grab local ip address
                 var host = Dns.GetHostEntry(host_name);
-                foreach(var ip in host.AddressList)
+                foreach (var ip in host.AddressList)
                 {
-                    if(ip.AddressFamily == AddressFamily.InterNetwork)
+                    if (ip.AddressFamily == AddressFamily.InterNetwork)
                     {
                         ip_address = ip.ToString();
                         break;
@@ -170,15 +168,15 @@ namespace Ticketing_Stub
                 }
 
                 //if we couldnt find ip addr
-                if(ip_address.Length == 0)
+                if (ip_address.Length == 0)
                     ip_address = "UNKNOWN";
-                
+
                 //check for file uploading
                 string image_path = uploadTextBox.Text;
-                if(image_path.Length > 0)
+                if (image_path.Length > 0)
                 {
                     await postImageToImgur(image_path);
-                } 
+                }
                 else
                 {
                     IMAGE_URL = "None uploaded";
@@ -241,7 +239,7 @@ namespace Ticketing_Stub
         {
             specificComboBox.SelectedIndex = -1;
             string name = generalComboBox.Text;
-            if(name.Equals(-1) || name.Equals(" "))
+            if (name.Equals(-1) || name.Equals(" "))
             {
                 specificComboBox.DataSource = ComboItem.Blank();
                 return;
