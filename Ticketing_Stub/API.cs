@@ -4,15 +4,33 @@ using RestSharp;
 using RestSharp.Authenticators;
 using System.Collections;
 using System.Net;
+using System.Windows.Forms;
+using System.Xml;
 
 namespace Ticketing_Stub
 {
     class API
     {
-        const string ROOM_ID = "yourroomid";
-        const string API_URL = "https://yourdomain.com/api/v1/";
-        const string BOT_NAME = "yourbotname";
-        const string BOT_PASSWORD = "yourbotpwd";
+        public static string ROOM_ID;
+        public static string API_URL;
+        public static string BOT_NAME;
+        public static string BOT_PASSWORD;
+
+        public static void ConfigureAPI()
+        {
+            string path = Application.StartupPath + "\\Config.xml";
+            XmlDocument doc = new XmlDocument();
+            doc.Load(path);
+            XmlElement root = doc.DocumentElement;
+            XmlNode nameNode = root.SelectSingleNode("BotName");
+            XmlNode botPwdNode = root.SelectSingleNode("BotPassword");
+            XmlNode ticketsNode = root.SelectSingleNode("TicketsRoomID");
+            XmlNode apiNode = root.SelectSingleNode("RocketChatApi");
+            ROOM_ID = ticketsNode.InnerText;
+            API_URL = apiNode.InnerText;
+            BOT_NAME = nameNode.InnerText;
+            BOT_PASSWORD = botPwdNode.InnerText;
+        }
 
         public static void submitTicket(string ticket, string host_name)
         {

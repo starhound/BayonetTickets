@@ -14,11 +14,8 @@ namespace Ticketing_Stub
 {
     public partial class Form1 : Form
     {
-        const string IMGUR_CLIENT_ID = "YOUR_IMGUR_CLIENT_ID";
-        const string IMGUR_CLIENT_SECRET = "YOUR_IMGUR_CLIENT_SECRET";
-
         //global hack to get image url outside of a Task function
-        public string IMAGE_URL { get; private set; }
+        
 
         /// <summary>
         /// Clears the main form of all values entered
@@ -51,18 +48,18 @@ namespace Ticketing_Stub
         {
             try
             {
-                var client = new ImgurClient(IMGUR_CLIENT_ID, IMGUR_CLIENT_SECRET);
+                var client = new ImgurClient(Imgur.IMGUR_CLIENT_ID, Imgur.IMGUR_CLIENT_SECRET);
                 var endpoint = new ImageEndpoint(client);
                 IImage image;
                 using (var fs = new FileStream(imagePath, FileMode.Open))
                 {
                     image = await endpoint.UploadImageStreamAsync(fs);
                 }
-                IMAGE_URL = image.Link;
+                Imgur.IMAGE_URL = image.Link;
             }
             catch (ImgurException imgurEx)
             {
-                IMAGE_URL = imgurEx.Message;
+                Imgur.IMAGE_URL = imgurEx.Message;
             }
         }
 
@@ -161,7 +158,7 @@ namespace Ticketing_Stub
                 }
                 else
                 {
-                    IMAGE_URL = "None uploaded";
+                    Imgur.IMAGE_URL = "None uploaded";
                 }
 
                 //begin formulation of ticket string
@@ -169,7 +166,7 @@ namespace Ticketing_Stub
                 ticket += "User_Email: " + email + "\n";
                 ticket += "Host_Name: " + host_name + "\n";
                 ticket += "IP_Address: " + ip_address + "\n";
-                ticket += "Image_URL: " + IMAGE_URL + "\n";
+                ticket += "Image_URL: " + Imgur.IMAGE_URL + "\n";
                 ticket += "Status: *Active*" + "\n";
                 ticket += "Issue: " + issue + "\n";
 
@@ -215,7 +212,8 @@ namespace Ticketing_Stub
             string app = "Bayonet IT Tickets Program";
             string version = File.ReadAllText(Application.StartupPath + "\\Version.txt");
             this.Text = app + " " + version;
-            Imgur.ConfigImgur();
+            Task.Run(() => Imgur.ConfigImgur());
+            Task.Run(() => API.ConfigureAPI());
         }
 
         private void generalComboBox_SelectedIndexChanged(object sender, EventArgs e)
