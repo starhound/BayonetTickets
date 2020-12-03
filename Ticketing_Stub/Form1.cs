@@ -43,7 +43,7 @@ namespace Ticketing_Stub
         bool DetermineComboBoxes()
         {
             //bug fix for 1.9.2
-            if (generalComboBox.SelectedIndex == -1 && issueTextBox.Text.Length == 0)
+            if (generalComboBox.SelectedIndex == 0 && issueTextBox.Text.Length == 0)
             {
                 MessageBox.Show("Please select a general and specific issue or enter in a description of your problem.");
                 return false;
