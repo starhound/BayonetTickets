@@ -39,11 +39,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.uploadButton = new System.Windows.Forms.Button();
-            this.uploadTextBox = new System.Windows.Forms.TextBox();
             this.generalComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.specificComboBox = new System.Windows.Forms.ComboBox();
+            this.screenShotLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,18 +137,11 @@
             // 
             this.uploadButton.Location = new System.Drawing.Point(12, 444);
             this.uploadButton.Name = "uploadButton";
-            this.uploadButton.Size = new System.Drawing.Size(97, 23);
+            this.uploadButton.Size = new System.Drawing.Size(127, 23);
             this.uploadButton.TabIndex = 22;
-            this.uploadButton.Text = "Upload Image";
+            this.uploadButton.Text = "Upload ScreenShot";
             this.uploadButton.UseVisualStyleBackColor = true;
             this.uploadButton.Click += new System.EventHandler(this.uploadButton_Click);
-            // 
-            // uploadTextBox
-            // 
-            this.uploadTextBox.Location = new System.Drawing.Point(115, 446);
-            this.uploadTextBox.Name = "uploadTextBox";
-            this.uploadTextBox.Size = new System.Drawing.Size(441, 20);
-            this.uploadTextBox.TabIndex = 23;
             // 
             // generalComboBox
             // 
@@ -185,16 +178,24 @@
             this.specificComboBox.Size = new System.Drawing.Size(258, 21);
             this.specificComboBox.TabIndex = 27;
             // 
+            // screenShotLabel
+            // 
+            this.screenShotLabel.AutoSize = true;
+            this.screenShotLabel.Location = new System.Drawing.Point(145, 449);
+            this.screenShotLabel.Name = "screenShotLabel";
+            this.screenShotLabel.Size = new System.Drawing.Size(0, 13);
+            this.screenShotLabel.TabIndex = 28;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 528);
+            this.Controls.Add(this.screenShotLabel);
             this.Controls.Add(this.specificComboBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.generalComboBox);
-            this.Controls.Add(this.uploadTextBox);
             this.Controls.Add(this.uploadButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.pictureBox1);
@@ -226,11 +227,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button uploadButton;
-        private System.Windows.Forms.TextBox uploadTextBox;
         private System.Windows.Forms.ComboBox generalComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox specificComboBox;
+        private System.Windows.Forms.Label screenShotLabel;
     }
 }
 

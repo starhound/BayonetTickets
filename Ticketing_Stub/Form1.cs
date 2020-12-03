@@ -4,6 +4,8 @@ using Imgur.API.Endpoints.Impl;
 using Imgur.API.Models;
 using System;
 using System.DirectoryServices.AccountManagement;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
@@ -22,7 +24,8 @@ namespace Ticketing_Stub
         {
             //clear input values
             issueTextBox.Text = "";
-            uploadTextBox.Text = "";
+            screenShotLabel.Text = "";
+            Imgur.IMGUR_SCREENSHOT_PATH = null;
             generalComboBox.SelectedIndex = 0;
         }
 
@@ -39,25 +42,6 @@ namespace Ticketing_Stub
         private void clearButton_Click(object sender, EventArgs e)
         {
             ClearIssue();
-        }
-
-        public async Task postImageToImgur(string imagePath)
-        {
-            try
-            {
-                var client = new ImgurClient(Imgur.IMGUR_CLIENT_ID, Imgur.IMGUR_CLIENT_SECRET);
-                var endpoint = new ImageEndpoint(client);
-                IImage image;
-                using (var fs = new FileStream(imagePath, FileMode.Open))
-                {
-                    image = await endpoint.UploadImageStreamAsync(fs);
-                }
-                Imgur.IMAGE_URL = image.Link;
-            }
-            catch (ImgurException imgurEx)
-            {
-                Imgur.IMAGE_URL = imgurEx.Message;
-            }
         }
 
         bool DetermineComboBoxes()
@@ -148,10 +132,10 @@ namespace Ticketing_Stub
                     ip_address = "UNKNOWN";
 
                 //check for file uploading
-                string image_path = uploadTextBox.Text;
-                if (image_path.Length > 0)
+                string image_path = Imgur.IMGUR_SCREENSHOT_PATH;
+                if (image_path != null)
                 {
-                    await postImageToImgur(image_path);
+                    await Imgur.postImageToImgur(image_path);
                 }
                 else
                 {
@@ -187,16 +171,35 @@ namespace Ticketing_Stub
 
         private void uploadButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
-            fileDialog.FilterIndex = 1;
-            fileDialog.Multiselect = false;
+            DateTime time = DateTime.Now;
+            string fileName = Environment.UserName + "_" + time.ToString("MM-dd-yyyy_hh-mm-ss") + "jpeg";
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-            if (fileDialog.ShowDialog() == DialogResult.OK)
+            if(!Directory.Exists(path + "\\TicketScreenShots"))
             {
-                string sFileName = fileDialog.FileName;
-                uploadTextBox.Text = sFileName;
+                Directory.CreateDirectory(path + "\\TicketScreenShots");
             }
+
+            string imagePath = path + "\\TicketScreenShots\\" + fileName;
+            int screenLeft = SystemInformation.VirtualScreen.Left;
+            int screenTop = SystemInformation.VirtualScreen.Top;
+            int screenWidth = SystemInformation.VirtualScreen.Width;
+            int screenHeight = SystemInformation.VirtualScreen.Height;
+
+            using (Bitmap bmp = new Bitmap(screenWidth, screenHeight))
+            {
+                // Draw the screenshot into our bitmap.
+                using (Graphics g = Graphics.FromImage(bmp))
+                {
+                    g.CopyFromScreen(screenLeft, screenTop, 0, 0, bmp.Size);
+                }
+
+                // Do something with the Bitmap here, like save it to a file:
+                bmp.Save(imagePath, ImageFormat.Jpeg);
+            }
+
+            screenShotLabel.Text = "Screen shot taken!";
+            Imgur.IMGUR_SCREENSHOT_PATH = imagePath;
         }
 
         private void Form1_Load(object sender, EventArgs e)
