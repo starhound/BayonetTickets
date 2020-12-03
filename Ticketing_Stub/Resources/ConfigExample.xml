@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <BotName>YourBotAccountName</BotName>
+  <BotPassword>YourBotPassword</BotPassword>
+  <RocketChatApi>https://YOURDOMAIN.com/api/v1/</RocketChatApi>
+  <TicketsRoomID>YourTicketsRoomID</TicketsRoomID>
+  <ImgurClientID>YourImgurClientID</ImgurClientID>
+  <ImgurClientSecret>YourImgurClientSecret</ImgurClientSecret>
+</config>
