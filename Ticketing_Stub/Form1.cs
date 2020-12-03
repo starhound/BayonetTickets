@@ -168,7 +168,7 @@ namespace Ticketing_Stub
         private void uploadButton_Click(object sender, EventArgs e)
         {
             DateTime time = DateTime.Now;
-            string fileName = Environment.UserName + "_" + time.ToString("MM-dd-yyyy_hh-mm-ss") + "jpeg";
+            string fileName = Environment.UserName + "_" + time.ToString("MM-dd-yyyy_hh-mm-ss") + ".jpeg";
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
             if (!Directory.Exists(path + "\\TicketScreenShots"))
