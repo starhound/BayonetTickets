@@ -109,7 +109,7 @@
             this.instructionsLabel.AutoSize = true;
             this.instructionsLabel.Location = new System.Drawing.Point(292, 6);
             this.instructionsLabel.Name = "instructionsLabel";
-            this.instructionsLabel.Size = new System.Drawing.Size(268, 208);
+            this.instructionsLabel.Size = new System.Drawing.Size(268, 260);
             this.instructionsLabel.TabIndex = 12;
             this.instructionsLabel.Text = resources.GetString("instructionsLabel.Text");
             // 

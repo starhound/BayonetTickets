@@ -121,10 +121,14 @@
     <value>To submit a ticket to the IT department you must 
  have a Bayonet Chat account.
 
-Please enter in your name and describe the issue 
-you're having. If you would like to upload a screen 
-shot of the issue you are having please click the 
-Upload Image button and attach the image. 
+Please select a common and specific issue from 
+the drop down menus. If your issue cannot be 
+found from the general menus, please describe
+your problem in the Issue text field.
+
+If you would like to upload a screen shot of the 
+issue you are having please click the 
+Take ScreenShot button. 
 
 Once you have filled out all the desired 
 information please click the Submit button to 
