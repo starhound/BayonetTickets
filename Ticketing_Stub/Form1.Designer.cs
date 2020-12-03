@@ -139,7 +139,7 @@
             this.uploadButton.Name = "uploadButton";
             this.uploadButton.Size = new System.Drawing.Size(127, 23);
             this.uploadButton.TabIndex = 22;
-            this.uploadButton.Text = "Upload ScreenShot";
+            this.uploadButton.Text = "Take ScreenShot";
             this.uploadButton.UseVisualStyleBackColor = true;
             this.uploadButton.Click += new System.EventHandler(this.uploadButton_Click);
             // 
