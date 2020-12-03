@@ -339,3 +339,4 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 /Ticketing_Stub/Resources/Config.xml
+/Ticketing_Stub/Config.xml

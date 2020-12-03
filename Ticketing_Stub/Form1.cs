@@ -215,6 +215,7 @@ namespace Ticketing_Stub
             string app = "Bayonet IT Tickets Program";
             string version = File.ReadAllText(Application.StartupPath + "\\Version.txt");
             this.Text = app + " " + version;
+            Imgur.ConfigImgur();
         }
 
         private void generalComboBox_SelectedIndexChanged(object sender, EventArgs e)
