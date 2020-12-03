@@ -14,7 +14,6 @@ namespace Ticketing_Stub
         public static string IMGUR_CLIENT_ID;
         public static string IMGUR_CLIENT_SECRET;
         public static string IMGUR_SCREENSHOT_PATH { get; set; }
-
         public static string IMAGE_URL { get; set; }
 
         public static void ConfigImgur()

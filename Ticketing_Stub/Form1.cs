@@ -1,8 +1,4 @@
-﻿using Imgur.API;
-using Imgur.API.Authentication.Impl;
-using Imgur.API.Endpoints.Impl;
-using Imgur.API.Models;
-using System;
+﻿using System;
 using System.DirectoryServices.AccountManagement;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -175,7 +171,7 @@ namespace Ticketing_Stub
             string fileName = Environment.UserName + "_" + time.ToString("MM-dd-yyyy_hh-mm-ss") + "jpeg";
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-            if(!Directory.Exists(path + "\\TicketScreenShots"))
+            if (!Directory.Exists(path + "\\TicketScreenShots"))
             {
                 Directory.CreateDirectory(path + "\\TicketScreenShots");
             }
