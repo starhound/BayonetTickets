@@ -190,6 +190,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CHANGES.txt" />
     <Content Include="Issues.xml" />
     <Content Include="logo.png" />
     <Content Include="Resources\Config.xml" />

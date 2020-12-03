@@ -10,24 +10,6 @@ using System.Net.Sockets;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-/*
- * Written and developed by Wesley Reid - March 2020 for Bayonet Plumbing, Heating and AC inc.
- * Github - https://github.com/starhound
- * Resume - https://starhound.com
- * 
- * Revision 1.0 to 1.4  - App deployment, minor bug fixes
- * Revision 1.5         - Rocket Chat Integration
- * Revision 1.6         - Auth Token sillyness 
- * Revision 1.7         - Did away with office selections, added Upload Image feature.
- * Revision 1.8         - Auto generation of Auth Tokens.
- * Revision 1.9         - Added Quick Categories, Bug fix for search feature, added API and ComboItem classes.
- * Revision 1.9.1       - Minor bug fixes
- * Revision 1.9.2       - another bug fix
- * Revision 1.9.3       - Seperated issue types into their own files
- * Revision 1.9.4       - Enabled specific and general issues being read from an XML file
- * Revision 1.9.5       - LDAP/AD Integration
- */
-
 namespace Ticketing_Stub
 {
     public partial class Form1 : Form
