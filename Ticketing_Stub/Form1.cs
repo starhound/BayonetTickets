@@ -227,5 +227,26 @@ namespace Ticketing_Stub
             }
             specificComboBox.DataSource = ComboItem.SpecificIssues(name);
         }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            string help = "To submit a ticket to the IT department you must have a Bayonet Chat account.";
+            help += Environment.NewLine;
+            help += Environment.NewLine;
+            help += "Please select a common and specific issue from the drop down menus. If your issue cannot be found from the general menus, please describe your problem in the Issue text field.";
+            help += Environment.NewLine;
+            help += Environment.NewLine;
+            help += "If you would like to upload a screen shot of the issue you are having please click the Take ScreenShot button.";
+            help += Environment.NewLine;
+            help += Environment.NewLine;
+            help += "Once you have filled out all the desired information please click the Submit button to send a ticket to the IT department.";
+            help += Environment.NewLine;
+            help += Environment.NewLine;
+            help += "To view open tickets you have with the IT department, please press the Search button.";
+            help += Environment.NewLine;
+            help += Environment.NewLine;
+            help += "To clear this program, press the Clear button.";
+            MessageBox.Show(help);
+        }
     }
 }

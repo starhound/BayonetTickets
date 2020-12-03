@@ -35,7 +35,6 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.issueTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.instructionsLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.uploadButton = new System.Windows.Forms.Button();
@@ -44,6 +43,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.specificComboBox = new System.Windows.Forms.ComboBox();
             this.screenShotLabel = new System.Windows.Forms.Label();
+            this.helpButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,20 +99,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(292, 164);
+            this.label1.Location = new System.Drawing.Point(276, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 26);
+            this.label1.Size = new System.Drawing.Size(224, 26);
             this.label1.TabIndex = 10;
-            this.label1.Text = "If this is an IT emergency\r\nplease call (727) 933-5322";
-            // 
-            // instructionsLabel
-            // 
-            this.instructionsLabel.AutoSize = true;
-            this.instructionsLabel.Location = new System.Drawing.Point(292, 6);
-            this.instructionsLabel.Name = "instructionsLabel";
-            this.instructionsLabel.Size = new System.Drawing.Size(268, 260);
-            this.instructionsLabel.TabIndex = 12;
-            this.instructionsLabel.Text = resources.GetString("instructionsLabel.Text");
+            this.label1.Text = "If this is an IT emergency please call: \r\n(727) 933-5322";
             // 
             // pictureBox1
             // 
@@ -186,11 +178,36 @@
             this.screenShotLabel.Size = new System.Drawing.Size(0, 13);
             this.screenShotLabel.TabIndex = 28;
             // 
+            // helpButton
+            // 
+            this.helpButton.BackgroundImage = global::Ticketing_Stub.Properties.Resources.question;
+            this.helpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.helpButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helpButton.ForeColor = System.Drawing.Color.White;
+            this.helpButton.Location = new System.Drawing.Point(531, 246);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(25, 25);
+            this.helpButton.TabIndex = 29;
+            this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(430, 252);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 13);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Click here for help:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 528);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.helpButton);
             this.Controls.Add(this.screenShotLabel);
             this.Controls.Add(this.specificComboBox);
             this.Controls.Add(this.label3);
@@ -199,7 +216,6 @@
             this.Controls.Add(this.uploadButton);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.instructionsLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.issueTextBox);
             this.Controls.Add(this.exitButton);
@@ -223,7 +239,6 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.TextBox issueTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label instructionsLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button uploadButton;
@@ -232,6 +247,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox specificComboBox;
         private System.Windows.Forms.Label screenShotLabel;
+        private System.Windows.Forms.Button helpButton;
+        private System.Windows.Forms.Label label4;
     }
 }
 

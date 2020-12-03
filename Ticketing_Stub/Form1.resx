@@ -117,28 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="instructionsLabel.Text" xml:space="preserve">
-    <value>To submit a ticket to the IT department you must 
- have a Bayonet Chat account.
-
-Please select a common and specific issue from 
-the drop down menus. If your issue cannot be 
-found from the general menus, please describe
-your problem in the Issue text field.
-
-If you would like to upload a screen shot of the 
-issue you are having please click the 
-Take ScreenShot button. 
-
-Once you have filled out all the desired 
-information please click the Submit button to 
-send a ticket to the IT department.
-
-To view open tickets you have with the IT department, 
-please press the Search button.
-
-To clear this program, press the Clear button.</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
