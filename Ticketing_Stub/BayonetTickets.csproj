@@ -192,7 +192,6 @@
   <ItemGroup>
     <Content Include="Issues.xml" />
     <Content Include="logo.png" />
-    <Content Include="Resources\Config.xml" />
     <Content Include="technical-support-2_icon-icons.com_52811.ico" />
     <Content Include="Version.txt" />
     <None Include="Resources\Bayonet_4x8_01A_50_1_50.jpg" />
