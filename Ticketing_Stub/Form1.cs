@@ -14,9 +14,6 @@ namespace Ticketing_Stub
 {
     public partial class Form1 : Form
     {
-        //global hack to get image url outside of a Task function
-        
-
         /// <summary>
         /// Clears the main form of all values entered
         /// </summary>
