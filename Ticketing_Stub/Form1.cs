@@ -167,6 +167,12 @@ namespace Ticketing_Stub
 
         private void uploadButton_Click(object sender, EventArgs e)
         {
+            if(screenShotLabel.Text.Length > 0)
+            {
+                screenShotLabel.Text = "Screen Shot Already Captured!";
+                return;
+            }
+
             DateTime time = DateTime.Now;
             string fileName = Environment.UserName + "_" + time.ToString("MM-dd-yyyy_hh-mm-ss") + ".jpeg";
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
